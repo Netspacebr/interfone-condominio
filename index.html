@@ -1,115 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title></title>
-	<meta name="generator" content="LibreOffice 25.2.2.2 (Linux)"/>
-	<meta name="created" content="2025-06-01T05:11:06.416689386"/>
-	<meta name="changed" content="2025-06-01T05:12:31.138138112"/>
-	<style type="text/css">
-		@page { size: 21cm 29.7cm; margin: 2cm }
-		p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }
-	</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interfone do Condomínio</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; background: #f4f4f4; }
+    h1 { color: #333; }
+    .casa { margin: 10px 0; }
+    button {
+      background: #25d366; color: white; border: none;
+      padding: 10px 20px; border-radius: 8px; font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 100%; margin-bottom: 0cm">
-&lt;!DOCTYPE html&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;html
-lang=&quot;pt-br&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;head&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  &lt;meta
-charset=&quot;UTF-8&quot; /&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  &lt;meta
-name=&quot;viewport&quot; content=&quot;width=device-width,
-initial-scale=1.0&quot;/&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  &lt;title&gt;Interfone
-do Condomínio&lt;/title&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  &lt;style&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    body {
-font-family: sans-serif; text-align: center; padding: 20px;
-background: #f4f4f4; }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    h1 { color:
-#333; }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    .casa { margin:
-10px 0; }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    button {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">      background:
-#25d366; color: white; border: none;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">      padding: 10px
-20px; border-radius: 8px; font-size: 16px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">      cursor:
-pointer;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  &lt;/style&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/head&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;body&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+<body>
 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;h1&gt;Interfone
-do Condomínio&lt;/h1&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;p&gt;Escolha a
-casa para iniciar contato via WhatsApp:&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+<h1>Interfone do Condomínio</h1>
+<p>Escolha a casa para iniciar contato via WhatsApp:</p>
 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;div
-class=&quot;casa&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  &lt;p&gt;&lt;strong&gt;Casa
-7&lt;/strong&gt;&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  &lt;button
-onclick=&quot;chamar('5511999999999', 'Casa 7')&quot;&gt;Chamar no
-WhatsApp&lt;/button&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+<div class="casa">
+  <p><strong>Casa 7</strong></p>
+  <button onclick="chamar('5511999999999', 'Casa 7')">Chamar no WhatsApp</button>
+</div>
 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;div
-class=&quot;casa&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  &lt;p&gt;&lt;strong&gt;Casa
-8&lt;/strong&gt;&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  &lt;button
-onclick=&quot;chamar('5511988888888', 'Casa 8')&quot;&gt;Chamar no
-WhatsApp&lt;/button&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+<div class="casa">
+  <p><strong>Casa 8</strong></p>
+  <button onclick="chamar('5511988888888', 'Casa 8')">Chamar no WhatsApp</button>
+</div>
 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;!-- Som de
-alerta --&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;audio id=&quot;toque&quot;
-src=&quot;https://actions.google.com/sounds/v1/alarms/beep_short.ogg&quot;
-preload=&quot;auto&quot;&gt;&lt;/audio&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+<audio id="toque" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  function
-chamar(numero, casa) {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    // Toca o som</p>
-<p style="line-height: 100%; margin-bottom: 0cm">   
-document.getElementById(&quot;toque&quot;).play();</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+<script>
+  function chamar(numero, casa) {
+    document.getElementById("toque").play();
+    const mensagem = `Olá! Estou no portão do condomínio e quero falar com a ${casa}.`;
+    const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(link, '_blank');
+  }
+</script>
 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    // Mensagem
-automática</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    const mensagem =
-`Olá! Estou no portão do condomínio e quero falar com a ${casa}.`;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    // Redireciona
-para o WhatsApp com mensagem</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    const link =
-`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">   
-window.open(link, '_blank');</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/body&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/html&gt;</p>
 </body>
 </html>
