@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visitante</title>
+</head>
+<body>
+    <h1>Visitante - Iniciar chamada</h1>
+    <video id="localVideo" autoplay playsinline muted></video>
+    <button onclick="start()">Chamar</button>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const localVideo = document.getElementById('localVideo');
+        const peer = new RTCPeerConnection();
+
+        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+            .then(stream => {
+                localVideo.srcObject = stream;
+                stream.getTracks().forEach(track => peer.addTrack(track, stream));
+            });
+
+        socket.on('signal', async (data) => {
+            if (data.type === 'answer') {
+                await peer.setRemoteDescription(new RTCSessionDescription(data));
+            } else if (data.type === 'candidate') {
+                try {
+                    await peer.addIceCandidate(data.candidate);
+                } catch (e) {}
+            }
+        });
+
+        peer.onicecandidate = event => {
+            if (event.candidate) {
+                socket.emit('signal', { type: 'candidate', candidate: event.candidate });
+            }
+        };
+
+        async function start() {
+            socket.emit('chamada');
+            const offer = await peer.createOffer();
+            await peer.setLocalDescription(offer);
+            socket.emit('signal', peer.localDescription);
+        }
+    </script>
+</body>
+</html>
