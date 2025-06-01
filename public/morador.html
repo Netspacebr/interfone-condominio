@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Morador</title>
+</head>
+<body>
+    <h1>Morador - Esperando chamada</h1>
+    <audio id="alerta" src="som.mp3" preload="auto"></audio>
+    <video id="remoteVideo" autoplay playsinline></video>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const alerta = document.getElementById('alerta');
+        const remoteVideo = document.getElementById('remoteVideo');
+        const peer = new RTCPeerConnection();
+
+        peer.ontrack = event => {
+            remoteVideo.srcObject = event.streams[0];
+        };
+
+        socket.on('chamada', () => {
+            alerta.play();
+        });
+
+        socket.on('signal', async (data) => {
+            if (data.type === 'offer') {
+                await peer.setRemoteDescription(new RTCSessionDescription(data));
+                const answer = await peer.createAnswer();
+                await peer.setLocalDescription(answer);
+                socket.emit('signal', peer.localDescription);
+            } else if (data.type === 'candidate') {
+                try {
+                    await peer.addIceCandidate(data.candidate);
+                } catch (e) {}
+            }
+        });
+
+        peer.onicecandidate = event => {
+            if (event.candidate) {
+                socket.emit('signal', { type: 'candidate', candidate: event.candidate });
+            }
+        };
+    </script>
+</body>
+</html>
