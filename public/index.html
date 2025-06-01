@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interfone do Condomínio</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; background: #f4f4f4; }
+    h1 { color: #333; }
+    .casa { margin: 10px 0; }
+    button {
+      background: #25d366; color: white; border: none;
+      padding: 10px 20px; border-radius: 8px; font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Interfone do Condomínio</h1>
+<p>Escolha a casa para iniciar contato via WhatsApp:</p>
+
+<div class="casa">
+  <p><strong>Casa 7</strong></p>
+  <button onclick="chamar('5511947785535', 'Casa 7')">Chamar no WhatsApp</button>
+</div>
+
+<div class="casa">
+  <p><strong>Casa 8</strong></p>
+  <button onclick="chamar('5511988888888', 'Casa 8')">Chamar no WhatsApp</button>
+</div>
+
+<audio id="toque" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+
+<script>
+  function chamar(numero, casa) {
+    document.getElementById("toque").play();
+    const mensagem = `Olá! Estou no portão do condomínio e quero falar com a ${casa}.`;
+    const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(link, '_blank');
+  }
+</script>
+
+</body>
+</html>
